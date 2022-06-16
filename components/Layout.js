@@ -11,13 +11,13 @@ const Layout = ({ children }) => {
       <header className="flex flex-row w-full px-10 py-2 shadow">
         <span className="h-8 items-center space-x-6">
           <Link href={'/'}>
-              <a className="text-2xl">Golfr 🏌️</a>
+            <a className="text-2xl">Golfr 🏌️</a>
           </Link>
           <Link href={'/'}>
-              <a className="text-xl">Home</a>
+            <a className="text-xl">Home</a>
           </Link>
           <Link href={'/golfers'}>
-              <a className="text-xl">Golfers</a>
+            <a className="text-xl">Golfers</a>
           </Link>
         </span>
         <span className="h-8 items-center text-xl ml-auto">
