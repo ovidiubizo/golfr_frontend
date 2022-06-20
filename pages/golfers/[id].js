@@ -11,34 +11,33 @@ const Golfer = () => {
 
   return (
     <Layout>
-      <>
-        {error ? (
-          error
-        ) : (
-          <>
-            {scores ? (
-              <>
-                <GolferProfile
-                  key={scores[0].id}
-                  userId={scores[0].user_id}
-                  userName={scores[0].user_name}
+      {error ? (
+        error
+      ) : (
+        <>
+          {scores ? (
+            <>
+              <GolferProfile
+                key={scores[0].id}
+                userId={scores[0].user_id}
+                userName={scores[0].user_name}
+              />
+              {scores && scores.map(score => (
+                <ScoreCard
+                  key={score.id}
+                  id={score.id}
+                  totalScore={score.total_score}
+                  playedAt={score.played_at}
+                  userId={score.user_id}
+                  userName={score.user_name}
                 />
-                {scores && scores.map(score => (
-                  <ScoreCard
-                    key={score.id}
-                    id={score.id}
-                    totalScore={score.total_score}
-                    playedAt={score.played_at}
-                    userId={score.user_id}
-                    userName={score.user_name}
-                  />
-                ))}
-              </>
-            ) : (
-              <>Loading ...</>)}
-          </>
-        )}
-      </>
+              ))}
+            </>
+          ) : (
+            <h1>Loading ...</h1>
+          )}
+        </>
+      )}
     </Layout>
   )
 }
