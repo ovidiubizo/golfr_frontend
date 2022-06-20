@@ -7,21 +7,19 @@ const Golfers = () => {
 
   return (
     <Layout>
-      <>
-        {error ? (
-          error
-        ) : (
-          <>
-            {golfers && golfers.map(golfer => (
-              <GolferCard
-                key={golfer.id}
-                userId={golfer.id}
-                userName={golfer.name}
-              />
-            ))}
-          </>
-        )}
-      </>
+      {error ? (
+        error
+      ) : (
+        <>
+          {golfers && golfers.map(golfer => (
+            <GolferCard
+              key={golfer.id}
+              userId={golfer.id}
+              userName={golfer.name}
+            />
+          ))}
+        </>
+      )}
     </Layout>
   )
 }
