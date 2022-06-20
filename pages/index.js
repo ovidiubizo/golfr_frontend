@@ -8,25 +8,23 @@ const Home = () => {
 
   return (
     <Layout>
-      <>
-        {error ? (
-          error
-        ) : (
-          <>
-            <ScorePostWidget />
-            {scores && scores.map(score => (
-              <ScoreCard
-                key={score.id}
-                id={score.id}
-                totalScore={score.total_score}
-                playedAt={score.played_at}
-                userId={score.user_id}
-                userName={score.user_name}
-              />
-            ))}
-          </>
-        )}
-      </>
+      {error ? (
+        error
+      ) : (
+        <>
+          <ScorePostWidget />
+          {scores && scores.map(score => (
+            <ScoreCard
+              key={score.id}
+              id={score.id}
+              totalScore={score.total_score}
+              playedAt={score.played_at}
+              userId={score.user_id}
+              userName={score.user_name}
+            />
+          ))}
+        </>
+      )}
     </Layout>
   )
 }
